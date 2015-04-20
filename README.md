@@ -18,7 +18,7 @@ The eval script is designed to run the classifiers in a general way, and send th
 The *classifier* folder contains modules an scripts for each implemented classifier.
 Classifiers should implemented as a file that can be run as an executable, in the following format:
 
-<class. script> <train|test>
+<class script> <train|test>
 
 ## plot
 Scripts for plotting, evaluating, visualizing, unsupervized learning, etc. mnist files for understanding.
