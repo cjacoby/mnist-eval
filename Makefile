@@ -14,6 +14,8 @@ all: features train evaluate report
 $(FEAT_DIR)/train.json $(FEAT_DIR)/test.json:
 	$(PYTHON) process/extract_features.py $(DATA_DIR)
 
+features: $(FEAT_DIR)/train.json $(FEAT_DIR)/test.json
+
 train: $(FEAT_DIR)/train.json
 	$(PYTHON) $(SELECTED_MODEL) train
 	touch $<
@@ -25,7 +27,7 @@ report: $(MODEL_DIR)/results.json
 	$(PYTHON) process/report_results.py
 
 test:
-	@echo "Data Dir: $(DATA_DIR)"
+	@}echo "Data Dir: $(DATA_DIR)"
 	@echo "Output Root: $(OUTPUT_ROOT)"
 	@echo "Model Root: $(MODEL_ROOT)"
 	@echo "Feature Dir: $(FEAT_DIR)"
